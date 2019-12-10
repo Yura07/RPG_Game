@@ -1,7 +1,7 @@
 package heroes;
 
 import monsters.Monster;
-import java.util.Random;
+
 public class Character {
     private String name;
     private Integer health;
@@ -39,22 +39,13 @@ public class Character {
         this.power = power;
     }
 
-    public void fight(Monster monster){
-        Random random = new Random();
-        int randomInt = random.nextInt(100);
-        Integer spellPower = null;
-        if(randomInt<16){
-            spellPower = monster.useAttackSpell();
-        }
-        Integer monsterPower = monster.getPower();
-        if (spellPower != null){
-            monsterPower = spellPower;
-        }
-        this.health -= monsterPower;
-        Integer monsterHealth = monster.getHealth();
-        monsterHealth -= this.power;
-        monster.setHealth(monsterHealth);
+    public void fight(Monster monster, Character character){
+        monster.monsterShot(character);
+        character.characterShot(monster);
+    }
 
+    public void characterShot(Monster monster){
+        monster.setHealth(monster.getHealth()-this.power);
     }
 
     public void heal(Monster monster) {

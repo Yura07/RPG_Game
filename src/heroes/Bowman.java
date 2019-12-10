@@ -13,23 +13,12 @@ public class Bowman extends Character {
     public Bowman() {
     }
 
-    public void shot(Monster monster){
-        Random random = new Random();
-        int randomInt = random.nextInt(100);
-        Integer spellPower = null;
-        if(randomInt<16){
-            spellPower = monster.useAttackSpell();
-        }
-        Integer monsterPower = monster.getPower();
-        if (spellPower != null){
-            monsterPower = spellPower;
-        }
-        Integer bowmanHealth = super.getHealth();
-        bowmanHealth -= monsterPower;
+
+    public void bowShot(Monster monster){
         Integer monsterHealth = monster.getHealth();
         Integer power = super.getPower();
-        double shot = power * 1.6;
-        power = (int) shot;
+        double bowShot = power * 1.6;
+        power = (int) bowShot;
         monsterHealth -=power;
         monster.setHealth(monsterHealth);
     }

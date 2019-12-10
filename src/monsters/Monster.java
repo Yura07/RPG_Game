@@ -1,5 +1,9 @@
 package monsters;
 
+import heroes.Character;
+
+import java.util.Random;
+
 public class Monster {
     private String name;
     private Integer health;
@@ -42,4 +46,22 @@ public class Monster {
 
         return null;
     }
+
+
+    public void monsterShot(Character character){
+        Random random = new Random();
+        int randomInt = random.nextInt(100);
+        Integer spellPower = null;
+        if(randomInt<16){
+            useAttackSpell();
+        }
+        Integer monsterPower = this.power;
+        if (spellPower != null){
+            monsterPower = spellPower;
+        }
+        character.setHealth(character.getHealth()-monsterPower);
+
+    }
+
+
 }

@@ -42,7 +42,7 @@ public class Location {
                 System.out.println("Press one for fight of two for heal");
                 switch (in.nextInt()){
                     case 1:{
-                        character.fight(monster);
+                        character.fight(monster,character);
                         break;
                     }
                     case 2: {
