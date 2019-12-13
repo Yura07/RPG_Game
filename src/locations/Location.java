@@ -1,3 +1,5 @@
+package locations;
+
 import heroes.Character;
 import monsters.Monster;
 import java.util.HashMap;
