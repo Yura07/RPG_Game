@@ -2,6 +2,7 @@ package locations;
 
 import heroes.Character;
 import monsters.Monster;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ import java.util.Set;
 
 public class Location {
     private String name;
-    private Map<Integer , Monster> monsterMap = new HashMap<>();
+    private Map<Integer, Monster> monsterMap = new HashMap<>();
     private Integer addToMonsterHp = 0;
     private Integer addToCharacterHp = 0;
     private Integer getAddToMonsterPower = 0;
@@ -33,18 +34,18 @@ public class Location {
     public Location() {
     }
 
-    public void dange(Character character){
+    public void dange(Character character) {
         Scanner in = new Scanner(System.in);
         Set<Integer> integers = this.monsterMap.keySet();
         for (Integer lvl : integers) {
             Monster monster = this.monsterMap.get(lvl);
             addToMonster(monster);
             addToCharacter(character);
-            while (monster.getHealth() > 0 && character.getHealth() > 0){
+            while (monster.getHealth() > 0 && character.getHealth() > 0) {
                 System.out.println("Press one for fight of two for heal");
-                switch (in.nextInt()){
-                    case 1:{
-                        character.fight(monster,character);
+                switch (in.nextInt()) {
+                    case 1: {
+                        character.fight(monster, character);
                         break;
                     }
                     case 2: {
@@ -58,12 +59,12 @@ public class Location {
         }
     }
 
-    private void addToMonster(Monster monster){
+    private void addToMonster(Monster monster) {
         monster.setHealth(monster.getHealth() + addToMonsterHp);
         monster.setPower(monster.getPower() + getAddToMonsterPower);
     }
 
-    private void addToCharacter(Character character){
+    private void addToCharacter(Character character) {
 
         character.setHealth(character.getHealth() + addToMonsterHp);
         character.setPower(character.getPower() + getAddToMonsterPower);
