@@ -17,8 +17,6 @@ public class MyMenu {
     public void menu() {
         System.out.println("\t =====HELLO! WELCOME TO THE GAME!=====");
         level1.level1(chooseCharacter());
-
-
     }
 
 

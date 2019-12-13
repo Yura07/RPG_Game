@@ -68,5 +68,6 @@ public class Location {
         character.setHealth(character.getHealth() + addToMonsterHp);
         character.setPower(character.getPower() + getAddToMonsterPower);
 
+
     }
 }
