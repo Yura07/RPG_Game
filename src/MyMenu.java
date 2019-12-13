@@ -20,26 +20,21 @@ public class MyMenu {
     }
 
 
-    public Character chooseCharacter() {
+    public Character chooseCharacter(){
         Character character = null;
         System.out.println("Please, choose your character: \n 1.Fighter \n 2.Bowman \n 3.Mag");
         Integer choose = sc.nextInt();
-        if (choose != 1 || choose != 2 || choose != 3) {
-            System.out.println("Error! There is no such character! Try again.");
-        } else {
-            switch (choose) {
-                case 1:
-                    character = new Fighter("Fighter", 100, 16);
-                    break;
-                case 2:
-                    character = new Bowman("Bowman", 100, 13);
-                    break;
-                case 3:
-                    character = new Mag("Mag", 100, 20);
-                    break;
-            }
+        switch (choose) {
+            case 1:
+                character = new Fighter("Fighter", 100, 16);
+                break;
+            case 2:
+                character = new Bowman("Bowman", 100, 13);
+                break;
+            case 3:
+                character = new Mag("Mag", 100, 20);
+                break;
         }
         return character;
     }
-
 }
