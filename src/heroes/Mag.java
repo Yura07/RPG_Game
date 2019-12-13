@@ -15,7 +15,7 @@ public class Mag extends Character {
     @Override
     public void heal(Monster monster) {
         Integer magHealth = super.getHealth();
-        magHealth += 50;
+        super.setHealth(magHealth += 50);
     }
 
 

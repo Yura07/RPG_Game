@@ -3,6 +3,7 @@ import heroes.Character;
 import heroes.Fighter;
 import heroes.Mag;
 import levels.Level1;
+import levels.Level2;
 
 import java.util.Scanner;
 
@@ -13,10 +14,12 @@ public class MyMenu {
 
     Scanner sc = new Scanner(System.in);
     Level1 level1 = new Level1();
+    Level2 level2 = new Level2();
 
     public void menu() {
         System.out.println("\t =====HELLO! WELCOME TO THE GAME!=====");
         level1.level1(chooseCharacter());
+        level2.level2(chooseCharacter());
     }
 
 
