@@ -18,8 +18,9 @@ public class Mag extends Character {
         super.setHealth(magHealth += 50);
     }
 
-
-    public void magFight(Monster monster){
+    @Override
+    public void ability(Monster monster, Character character) {
+        monster.monsterShot(character);
         monster.setHealth(monster.getHealth()-super.getPower()*3);
     }
 }

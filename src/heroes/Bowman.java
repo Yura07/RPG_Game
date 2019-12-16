@@ -14,16 +14,20 @@ public class Bowman extends Character {
     }
 
 
-    public void bowShot(Monster monster){
-        Integer monsterHealth = monster.getHealth();
-        Integer power = super.getPower();
-        double bowShot = power * 1.6;
-        power = (int) bowShot;
-        monsterHealth -=power;
-        monster.setHealth(monsterHealth);
-    }
+//  abstract method
+//    @Override
+//    public void characterShot(Monster monster) {
+//        monster.monsterShot(character);
+//        Integer monsterHealth = monster.getHealth();
+//        Integer power = super.getPower();
+//        double bowShot = power * 1.6;
+//        power = (int) bowShot;
+//        monsterHealth -=power;
+//        monster.setHealth(monsterHealth);
+//    }
 
-    public void disguise(Monster monster){
+    @Override
+    public void ability(Monster monster, Character character) {
         Integer monsterHealth = monster.getHealth();
         Integer power = super.getPower();
         double shot = power * 1.3;
@@ -31,4 +35,5 @@ public class Bowman extends Character {
         monsterHealth -=power;
         monster.setHealth(monsterHealth);
     }
+
 }

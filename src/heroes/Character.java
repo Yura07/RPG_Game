@@ -48,6 +48,10 @@ public class Character {
         monster.setHealth(monster.getHealth()-this.power);
     }
 
+    public void ability(Monster monster, Character character){
+
+    }
+
     public void heal(Monster monster) {
 
         this.health += 20;

@@ -16,6 +16,7 @@ public class MyMenu {
     Level1 level1 = new Level1();
     Level2 level2 = new Level2();
 
+
     public void menu() {
         System.out.println("\t =====HELLO! WELCOME TO THE GAME!=====");
         level1.level1(chooseCharacter());

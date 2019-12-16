@@ -42,13 +42,17 @@ public class Location {
             addToMonster(monster);
             addToCharacter(character);
             while (monster.getHealth() > 0 && character.getHealth() > 0) {
-                System.out.println("Press one for fight of two for heal");
+                System.out.println("Press \n 1 for fight \n 2 for use ability \n 3 for heal");
                 switch (in.nextInt()) {
                     case 1: {
                         character.fight(monster, character);
                         break;
                     }
-                    case 2: {
+                    case 2:{
+                        character.ability(monster, character);
+                        break;
+                    }
+                    case 3: {
                         character.heal(monster);
                         break;
                     }

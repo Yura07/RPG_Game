@@ -12,7 +12,9 @@ public class Fighter extends Character {
     public Fighter() {
     }
 
-    public void bigSwordBlow(Monster monster){
+    @Override
+    public void ability(Monster monster, Character character) {
+        monster.monsterShot(character);
         monster.setHealth(monster.getHealth()-super.getPower()*2);
     }
 }
