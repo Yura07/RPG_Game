@@ -1,5 +1,9 @@
 package monsters;
 
+import heroes.Character;
+
+import java.util.Random;
+
 public class Spider extends Monster {
     private Integer mana = 100;
     public Spider(String name, Integer health, Integer power) {
@@ -18,6 +22,20 @@ public class Spider extends Monster {
         return power;
     }
 
+    @Override
+    public void monsterShot(Character character) {
+        Random random = new Random();
+        int randomInt = random.nextInt(100);
+        Integer spellPower = null;
+        if(randomInt<16){
+            useAttackSpell();
+        }
+        Integer monsterPower = super.getPower();
+        if (spellPower != null){
+            monsterPower = spellPower;
+        }
+        character.setHealth(character.getHealth()-monsterPower);
+    }
 
 
     public Integer getMana() {

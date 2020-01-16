@@ -1,10 +1,6 @@
 package monsters;
 
-import heroes.Character;
-
-import java.util.Random;
-
-public class Monster {
+public abstract class Monster implements Monsterable {
     private String name;
     private Integer health;
     private Integer power;
@@ -41,27 +37,5 @@ public class Monster {
     public void setPower(Integer power) {
         this.power = power;
     }
-
-    public Integer useAttackSpell(){
-
-        return null;
-    }
-
-
-    public void monsterShot(Character character){
-        Random random = new Random();
-        int randomInt = random.nextInt(100);
-        Integer spellPower = null;
-        if(randomInt<16){
-            useAttackSpell();
-        }
-        Integer monsterPower = this.power;
-        if (spellPower != null){
-            monsterPower = spellPower;
-        }
-        character.setHealth(character.getHealth()-monsterPower);
-
-    }
-
 
 }

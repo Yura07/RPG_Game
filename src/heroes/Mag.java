@@ -2,14 +2,17 @@ package heroes;
 
 import monsters.Monster;
 
-import java.util.Random;
-
 public class Mag extends Character {
     public Mag(String name, Integer health, Integer power) {
         super(name, health, power);
     }
 
     public Mag() {
+    }
+
+    @Override
+    public void characterShot(Monster monster) {
+
     }
 
     @Override

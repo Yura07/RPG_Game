@@ -11,13 +11,19 @@ public class Dragon extends Monster {
     }
 
     @Override
-    public void monsterShot(Character character) {
-        character.setHealth(character.getHealth() - super.getPower() * 2);
+    public Integer useAttackSpell() {
+        Integer power = null;
+        if (super.getHealth() < 75 && super.getHealth() > 55 || super.getHealth() < 35 && super.getHealth() > 15) {
+            power = super.getPower();
+            double dmg = power * 3;
+            power = (int) dmg;
+            System.out.println("I use spell FU");
+        }
+        return power;
     }
 
-    public void dragonFire(Character character) {
-        if (super.getHealth() < 75 && super.getHealth() > 55 || super.getHealth() < 35 && super.getHealth() > 15) {
-            character.setHealth(character.getHealth() - super.getPower() * 3);
-        }
+    @Override
+    public void monsterShot(Character character) {
+        character.setHealth(character.getHealth() - super.getPower() * 2);
     }
 }

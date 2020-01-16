@@ -2,7 +2,7 @@ package heroes;
 
 import monsters.Monster;
 
-public class Character {
+public abstract class Character implements Characterable {
     private String name;
     private Integer health;
     private Integer power;
@@ -39,22 +39,9 @@ public class Character {
         this.power = power;
     }
 
+    @Override
     public void fight(Monster monster, Character character){
         monster.monsterShot(character);
         character.characterShot(monster);
-    }
-
-    public void characterShot(Monster monster){
-        monster.setHealth(monster.getHealth()-this.power);
-    }
-
-    public void ability(Monster monster, Character character){
-
-    }
-
-    public void heal(Monster monster) {
-
-        this.health += 20;
-
     }
 }
