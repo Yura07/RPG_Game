@@ -48,7 +48,7 @@ public class Location {
                         character.fight(monster, character);
                         break;
                     }
-                    case 2:{
+                    case 2: {
                         character.ability(monster, character);
                         break;
                     }
@@ -57,8 +57,13 @@ public class Location {
                         break;
                     }
                 }
-                System.out.print("monster HP:" + monster.getHealth());
-                System.out.println("  character HP:" + character.getHealth());
+                if (monster.getHealth() <= 0) {
+                    System.out.println("Monster is dead");
+                } else {
+                    System.out.print("monster "+ monster.getName() + " HP:" + monster.getHealth());
+                }
+                System.out.println("    " + character.getName() + " HP:" + character.getHealth());
+                System.out.println("============================");
             }
         }
     }

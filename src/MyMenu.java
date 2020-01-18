@@ -5,6 +5,7 @@ import heroes.Mag;
 import levels.Level1;
 import levels.Level2;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MyMenu {
@@ -26,19 +27,29 @@ public class MyMenu {
 
     public Character chooseCharacter(){
         Character character = null;
-        System.out.println("Please, choose your character: \n 1.Fighter \n 2.Bowman \n 3.Mag");
-        Integer choose = sc.nextInt();
-        switch (choose) {
-            case 1:
-                character = new Fighter("Fighter", 100, 16);
-                break;
-            case 2:
-                character = new Bowman("Bowman", 100, 13);
-                break;
-            case 3:
-                character = new Mag("Mag", 100, 20);
-                break;
-        }
+        System.out.println("Enter your name");
+        String name = sc.nextLine();
+        boolean isCorrectInput = true;
+        do {
+            try {
+                System.out.println("Please, choose your character: \n 1.Fighter \n 2.Bowman \n 3.Mag");
+                int choose = sc.nextInt();
+                switch (choose) {
+                    case 1:
+                        character = new Fighter(name, 100, 16);
+                        break;
+                    case 2:
+                        character = new Bowman(name, 100, 13);
+                        break;
+                    case 3:
+                        character = new Mag(name, 100, 20);
+                        break;
+                }
+                isCorrectInput = false;
+            } catch (InputMismatchException | NullPointerException e) {
+                System.out.println("Incorrect enter. Please try again");
+            }
+        } while (isCorrectInput);
         return character;
     }
 }
