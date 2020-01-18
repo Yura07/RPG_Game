@@ -17,7 +17,7 @@ public class Dragon extends Monster {
             power = super.getPower();
             double dmg = power * 3;
             power = (int) dmg;
-            System.out.println("I use spell FU");
+            System.out.println("I used power");
         }
         return power;
     }

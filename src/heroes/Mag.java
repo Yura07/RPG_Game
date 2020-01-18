@@ -12,13 +12,13 @@ public class Mag extends Character {
 
     @Override
     public void characterShot(Monster monster) {
-
+        monster.setHealth(monster.getHealth()- super.getPower());
     }
 
     @Override
     public void heal(Monster monster) {
         Integer magHealth = super.getHealth();
-        super.setHealth(magHealth += 50);
+        super.setHealth(magHealth += 40);
     }
 
     @Override

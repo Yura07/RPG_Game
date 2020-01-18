@@ -18,7 +18,7 @@ public class Spider extends Monster {
         Integer power = super.getPower();
         double dmg = power * 1.5;
         power = (int) dmg;
-        System.out.println("I use spell FU");
+        System.out.println("I used spell attack");
         return power;
     }
 

@@ -3,10 +3,7 @@ package locations;
 import heroes.Character;
 import monsters.Monster;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 
 public class Location {
@@ -36,27 +33,34 @@ public class Location {
 
     public void dange(Character character) {
         Scanner in = new Scanner(System.in);
+        boolean isCorrectInput = true;
         Set<Integer> integers = this.monsterMap.keySet();
         for (Integer lvl : integers) {
             Monster monster = this.monsterMap.get(lvl);
             addToMonster(monster);
             addToCharacter(character);
             while (monster.getHealth() > 0 && character.getHealth() > 0) {
-                System.out.println("Press \n 1 for fight \n 2 for use ability \n 3 for heal");
-                switch (in.nextInt()) {
-                    case 1: {
-                        character.fight(monster, character);
-                        break;
+                do {
+                    try {
+                        System.out.println("Press \n 1. for fight \n 2. for use ability \n 3. for heal");
+                        switch (in.nextLine()) {
+                            case "1":
+                                character.fight(monster, character);
+                                break;
+                            case "2":
+                                character.ability(monster, character);
+                                break;
+                            case "3":
+                                character.heal(monster);
+                                break;
+                            default:
+                                throw new IllegalArgumentException();
+                        }
+                        isCorrectInput = false;
+                    } catch (InputMismatchException | NullPointerException | IllegalArgumentException e) {
+                        System.err.println("Incorrect enter. Please try again");
                     }
-                    case 2: {
-                        character.ability(monster, character);
-                        break;
-                    }
-                    case 3: {
-                        character.heal(monster);
-                        break;
-                    }
-                }
+                } while (isCorrectInput);
                 if (monster.getHealth() <= 0) {
                     System.out.println("Monster is dead");
                 } else {

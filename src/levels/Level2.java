@@ -17,10 +17,10 @@ public class Level2 {
     }
     public void level2(Character character){
         levelInfo();
-        Monster monsterLvl1 = new Dragon("Dragon", 20, 2);
-        Monster monsterLvl2 = new Dragon("Dragon", 30, 4);
-        Monster monsterLvl3 = new Dragon("Dragon", 40, 8);
-        Monster boss = new Dragon("Big Dragon", 50, 12);
+        Monster monsterLvl1 = new Dragon("Dragon", 25, 4);
+        Monster monsterLvl2 = new Dragon("Dragon", 35, 6);
+        Monster monsterLvl3 = new Dragon("Dragon", 45, 10);
+        Monster boss = new Dragon("Big Dragon", 60, 16);
 
         Map<Integer, Monster> locationMonsters = new HashMap<>();
         locationMonsters.put(1, monsterLvl1);

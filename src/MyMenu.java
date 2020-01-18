@@ -27,27 +27,29 @@ public class MyMenu {
 
     public Character chooseCharacter(){
         Character character = null;
-        System.out.println("Enter your name");
+        System.out.println("\tEnter your name, please");
         String name = sc.nextLine();
         boolean isCorrectInput = true;
         do {
             try {
                 System.out.println("Please, choose your character: \n 1.Fighter \n 2.Bowman \n 3.Mag");
-                int choose = sc.nextInt();
+                String choose = sc.nextLine();
                 switch (choose) {
-                    case 1:
+                    case "1":
                         character = new Fighter(name, 100, 16);
                         break;
-                    case 2:
+                    case "2":
                         character = new Bowman(name, 100, 13);
                         break;
-                    case 3:
+                    case "3":
                         character = new Mag(name, 100, 20);
                         break;
+                    default:
+                        throw new IllegalArgumentException();
                 }
                 isCorrectInput = false;
-            } catch (InputMismatchException | NullPointerException e) {
-                System.out.println("Incorrect enter. Please try again");
+            } catch (InputMismatchException | NullPointerException | IllegalArgumentException e) {
+                System.err.println("Incorrect enter. Please try again");
             }
         } while (isCorrectInput);
         return character;
