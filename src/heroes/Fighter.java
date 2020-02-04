@@ -3,7 +3,7 @@ package heroes;
 import monsters.Monster;
 
 public class Fighter extends Character {
-    public Fighter(String nickName, Integer classId, Integer hp, boolean isMale, Integer power) {
+    public Fighter(String nickName, String classId, Integer hp, boolean isMale, Integer power) {
         super(nickName, classId, hp, isMale, power);
     }
 

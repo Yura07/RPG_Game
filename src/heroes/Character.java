@@ -4,14 +4,14 @@ import monsters.Monster;
 
 public class Character implements Characterable {
     private String nickName;
-    private Integer classId;
+    private String className;
     private Integer hp;
     private boolean isMale;
     private Integer power;
 
-    public Character(String nickName, Integer classId, Integer hp, boolean isMale, Integer power) {
+    public Character(String nickName, String className, Integer hp, boolean isMale, Integer power) {
         this.nickName = nickName;
-        this.classId = classId;
+        this.className = className;
         this.hp = hp;
         this.isMale = isMale;
         this.power = power;
@@ -28,12 +28,12 @@ public class Character implements Characterable {
         this.nickName = nickName;
     }
 
-    public Integer getClassId() {
-        return classId;
+    public String getClassName() {
+        return className;
     }
 
     public void setClassId(Integer classId) {
-        this.classId = classId;
+        this.className = className;
     }
 
     public Integer getHp() {

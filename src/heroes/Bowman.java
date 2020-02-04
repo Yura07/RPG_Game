@@ -4,7 +4,7 @@ import monsters.Monster;
 
 public class Bowman extends Character {
 
-    public Bowman(String nickName, Integer classId, Integer hp, boolean isMale, Integer power) {
+    public Bowman(String nickName, String classId, Integer hp, boolean isMale, Integer power) {
         super(nickName, classId, hp, isMale, power);
     }
 
