@@ -3,13 +3,9 @@ package heroes;
 import monsters.Monster;
 
 public class Fighter extends Character {
-    public Fighter(String name, Integer health, Integer power) {
-        super(name, health, power);
+    public Fighter(String nickName, Integer classId, Integer hp, boolean isMale, Integer power) {
+        super(nickName, classId, hp, isMale, power);
     }
-
-    public Fighter() {
-    }
-
 
     @Override
     public void characterShot(Monster monster) {
@@ -24,6 +20,6 @@ public class Fighter extends Character {
 
     @Override
     public void heal(Monster monster) {
-        setHealth(super.getHealth() + 20);
+        setHp(super.getHp() + 20);
     }
 }

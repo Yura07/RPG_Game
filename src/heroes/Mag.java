@@ -3,12 +3,10 @@ package heroes;
 import monsters.Monster;
 
 public class Mag extends Character {
-    public Mag(String name, Integer health, Integer power) {
-        super(name, health, power);
+    public Mag(String nickName, Integer classId, Integer hp, boolean isMale, Integer power) {
+        super(nickName, classId, hp, isMale, power);
     }
 
-    public Mag() {
-    }
 
     @Override
     public void characterShot(Monster monster) {
@@ -17,8 +15,8 @@ public class Mag extends Character {
 
     @Override
     public void heal(Monster monster) {
-        Integer magHealth = super.getHealth();
-        super.setHealth(magHealth += 40);
+        Integer magHealth = super.getHp();
+        super.setHp(magHealth += 40);
     }
 
     @Override

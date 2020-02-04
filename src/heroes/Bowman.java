@@ -4,11 +4,8 @@ import monsters.Monster;
 
 public class Bowman extends Character {
 
-    public Bowman(String name, Integer health, Integer power) {
-        super(name, health, power);
-    }
-
-    public Bowman() {
+    public Bowman(String nickName, Integer classId, Integer hp, boolean isMale, Integer power) {
+        super(nickName, classId, hp, isMale, power);
     }
 
     @Override
@@ -34,7 +31,7 @@ public class Bowman extends Character {
 
     @Override
     public void heal(Monster monster) {
-        setHealth(super.getHealth() + 10);
+        setHp(super.getHp() + 10);
     }
 
 }

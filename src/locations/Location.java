@@ -39,7 +39,7 @@ public class Location {
             Monster monster = this.monsterMap.get(lvl);
             addToMonster(monster);
             addToCharacter(character);
-            while (monster.getHealth() > 0 && character.getHealth() > 0) {
+            while (monster.getHealth() > 0 && character.getHp() > 0) {
                 do {
                     try {
                         System.out.println("Press \n 1. for fight \n 2. for use ability \n 3. for heal");
@@ -66,7 +66,7 @@ public class Location {
                 } else {
                     System.out.print("monster "+ monster.getName() + " HP:" + monster.getHealth());
                 }
-                System.out.println("    " + character.getName() + " HP:" + character.getHealth());
+                System.out.println("    " + character.getNickName() + " HP:" + character.getHp());
                 System.out.println("============================");
             }
         }
@@ -79,7 +79,7 @@ public class Location {
 
     private void addToCharacter(Character character) {
 
-        character.setHealth(character.getHealth() + addToMonsterHp);
+        character.setHp(character.getHp() + addToMonsterHp);
         character.setPower(character.getPower() + getAddToMonsterPower);
 
 

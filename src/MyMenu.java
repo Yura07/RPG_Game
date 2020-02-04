@@ -1,3 +1,4 @@
+import db.DataBaseHandler;
 import heroes.Bowman;
 import heroes.Character;
 import heroes.Fighter;
@@ -53,5 +54,14 @@ public class MyMenu {
             }
         } while (isCorrectInput);
         return character;
+    }
+
+    public void createNewCharacter(){
+        DataBaseHandler dbHandler = new DataBaseHandler();
+        System.out.println("Enter nick name, choose hero...");
+        Scanner input = new Scanner(System.in);
+
+        Character character = new Character(input.nextLine(),input.nextInt(), input.nextInt(), input.nextBoolean(),input.nextInt());
+        dbHandler.createCharacter(character);
     }
 }

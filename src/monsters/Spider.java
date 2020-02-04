@@ -34,7 +34,7 @@ public class Spider extends Monster {
         if (spellPower != null){
             monsterPower = spellPower;
         }
-        character.setHealth(character.getHealth()-monsterPower);
+        character.setHp(character.getHp()-monsterPower);
     }
 
 

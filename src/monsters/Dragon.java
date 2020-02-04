@@ -24,6 +24,6 @@ public class Dragon extends Monster {
 
     @Override
     public void monsterShot(Character character) {
-        character.setHealth(character.getHealth() - super.getPower() * 2);
+        character.setHp(character.getHp() - super.getPower() * 2);
     }
 }
