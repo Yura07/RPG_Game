@@ -6,8 +6,12 @@ import java.util.Random;
 
 public class Spider extends Monster {
     private Integer mana = 100;
-    public Spider(String name, Integer health, Integer power) {
-        super(name, health, power);
+
+    public Spider(Integer id, Integer classId, String name, Integer hp, Integer power) {
+        super(id, classId, name, hp, power);
+    }
+
+    public Spider() {
     }
 
     @Override

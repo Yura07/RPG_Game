@@ -1,11 +1,13 @@
 package db;
 
 import heroes.Character;
+import monsters.Monster;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class DataBaseHandler extends Configs{
     Connection dbConnection;
@@ -38,5 +40,33 @@ public class DataBaseHandler extends Configs{
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private Monster mapMonster(ResultSet resultSet) throws SQLException{
+        Monster monster = new Monster();
+        monster.setId(resultSet.getInt("id"));
+        monster.setClassId(resultSet.getInt("class_id"));
+        monster.setName(resultSet.getString("monster_name"));
+        monster.setHp(resultSet.getInt("hp"));
+        monster.setPower(resultSet.getInt("power"));
+        return monster;
+    }
+
+    public List<Monster> getAll(){
+        String select = "SELECT * FROM rpg_game.monsters";
+        try {
+            PreparedStatement statement = getDbConnection().prepareStatement(select);
+            ResultSet resultSet = statement.executeQuery();
+            List<Monster> monsters = new ArrayList<>();
+            while (resultSet.next()){
+                monsters.add(mapMonster(resultSet));
+            }
+            return monsters;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
     }
 }

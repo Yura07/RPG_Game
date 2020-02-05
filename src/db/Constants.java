@@ -9,4 +9,6 @@ public class Constants {
     public static final String CHARACTERS_HP = "hp";
     public static final String CHARACTERS_IS_MALE = "is_male";
     public static final String CHARACTERS_POWER = "power";
+
+
 }

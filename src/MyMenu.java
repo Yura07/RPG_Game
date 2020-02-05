@@ -3,9 +3,7 @@ import heroes.Bowman;
 import heroes.Character;
 import heroes.Fighter;
 import heroes.Mag;
-import levels.Level1;
-import levels.Level2;
-
+import locations.Location;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,14 +13,12 @@ public class MyMenu {
     }
 
     Scanner input = new Scanner(System.in);
-    Level1 level1 = new Level1();
-    Level2 level2 = new Level2();
+    Location location = new Location();
 
 
     public void menu() {
         System.out.println("\t =====HELLO! WELCOME TO THE GAME!=====");
-        level1.level1(createNewCharacter());
-//        level2.level2(createNewCharacter());
+        location.dange(createNewCharacter());
     }
 
 

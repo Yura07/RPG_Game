@@ -10,7 +10,7 @@ public class Mag extends Character {
 
     @Override
     public void characterShot(Monster monster) {
-        monster.setHealth(monster.getHealth()- super.getPower());
+        monster.setHp(monster.getHp()- super.getPower());
     }
 
     @Override
@@ -22,6 +22,6 @@ public class Mag extends Character {
     @Override
     public void ability(Monster monster, Character character) {
         monster.monsterShot(character);
-        monster.setHealth(monster.getHealth()-super.getPower()*3);
+        monster.setHp(monster.getHp()-super.getPower()*3);
     }
 }

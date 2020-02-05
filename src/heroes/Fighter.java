@@ -9,13 +9,13 @@ public class Fighter extends Character {
 
     @Override
     public void characterShot(Monster monster) {
-        monster.setHealth(monster.getHealth()- super.getPower());
+        monster.setHp(monster.getHp()- super.getPower());
     }
 
     @Override
     public void ability(Monster monster, Character character) {
         monster.monsterShot(character);
-        monster.setHealth(monster.getHealth()-super.getPower()*2);
+        monster.setHp(monster.getHp()-super.getPower()*2);
     }
 
     @Override
