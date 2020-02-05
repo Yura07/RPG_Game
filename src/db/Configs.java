@@ -7,4 +7,5 @@ public class Configs {
     protected String dbTimezone = "?serverTimezone=UTC";
     protected String dbPass = "zfau2e4q";
     protected String dbName = "rpg_game";
+
 }

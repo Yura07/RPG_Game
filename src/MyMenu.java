@@ -12,17 +12,16 @@ public class MyMenu {
         menu();
     }
 
-    Scanner input = new Scanner(System.in);
-    Location location = new Location();
+    private Scanner input = new Scanner(System.in);
+    private Location location = new Location();
 
 
-    public void menu() {
+    private void menu() {
         System.out.println("\t =====HELLO! WELCOME TO THE GAME!=====");
         location.dange(createNewCharacter());
     }
 
-
-    public Character createNewCharacter(){
+    private Character createNewCharacter(){
         DataBaseHandler dbHandler = new DataBaseHandler();
         Character character = null;
         boolean isCorrectInput = true;

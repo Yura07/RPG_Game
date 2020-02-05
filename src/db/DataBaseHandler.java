@@ -5,14 +5,13 @@ import monsters.Monster;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class DataBaseHandler extends Configs{
-    Connection dbConnection;
+    private Connection dbConnection;
 
-    public Connection getDbConnection()throws ClassNotFoundException, SQLException{
+    private Connection getDbConnection()throws ClassNotFoundException, SQLException{
         String connectionURL = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName + dbTimezone;
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -35,9 +34,7 @@ public class DataBaseHandler extends Configs{
 
             statement.executeUpdate();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -62,9 +59,7 @@ public class DataBaseHandler extends Configs{
                 monsters.add(mapMonster(resultSet));
             }
             return monsters;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return Collections.emptyList();

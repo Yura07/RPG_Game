@@ -9,6 +9,7 @@ public class Fighter extends Character {
 
     @Override
     public void characterShot(Monster monster) {
+
         monster.setHp(monster.getHp()- super.getPower());
     }
 

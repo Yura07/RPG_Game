@@ -33,5 +33,4 @@ public class Bowman extends Character {
     public void heal(Monster monster) {
         setHp(super.getHp() + 10);
     }
-
 }

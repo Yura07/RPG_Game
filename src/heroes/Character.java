@@ -17,8 +17,8 @@ public class Character implements Characterable {
         this.power = power;
     }
 
-//    public Character() {
-//    }
+    public Character() {
+    }
 
     public String getNickName() {
         return nickName;
@@ -32,7 +32,7 @@ public class Character implements Characterable {
         return className;
     }
 
-    public void setClassId(Integer classId) {
+    public void setClassName(String className) {
         this.className = className;
     }
 

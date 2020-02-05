@@ -67,6 +67,5 @@ public class Monster implements Monsterable {
 
     @Override
     public void monsterShot(Character character) {
-
     }
 }

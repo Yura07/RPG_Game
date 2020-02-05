@@ -40,8 +40,6 @@ public class Spider extends Monster {
         }
         character.setHp(character.getHp()-monsterPower);
     }
-
-
     public Integer getMana() {
         return mana;
     }

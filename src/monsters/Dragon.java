@@ -10,6 +10,7 @@ public class Dragon extends Monster {
     public Dragon() {
     }
 
+
     @Override
     public Integer useAttackSpell() {
         Integer power = null;
